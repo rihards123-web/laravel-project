@@ -1,0 +1,55 @@
+footer {
+    background-color: #272727;
+    color: white;
+}
+
+.container-hr {
+    padding-top: 4em;
+    margin: auto;
+    color: white;
+    width: 85%;
+}
+
+.container-top  {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5em
+}
+
+.container-discovery {
+    margin: 2em;
+}
+
+.container-discovery h4 {
+    margin-bottom: 1.5em;
+}
+
+.container-about {
+    margin: 2em;
+}
+
+.container-about h4 {
+    margin-bottom: 1.5em;
+}
+
+.container-info {
+    margin: 2em;
+}
+
+.container-info h4 {
+    margin-bottom: 1.5em;
+}
+
+.container-bottom {
+    background-color: #E5E5E5;
+    color: #5E6E89;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+}
+
+.container-bottom h4 {
+    margin: 0 2em 0 2em;
+}

@@ -1,0 +1,86 @@
+.landing {
+    background-image: url('/images/Landing-Background.png');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* position: fixed;  fucks with the flow of the page */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-container {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    text-align: center;
+    padding: 8em 12em 8em 12em;
+}
+
+.center-container h2 {
+    font-size: 32px;
+    margin-bottom: 2em;
+}
+
+.center-container h4 {
+    font-size: 20px;
+    margin-bottom: 2em;
+}
+
+.center-container button {
+    padding: 1em 5em 1em 5em;
+    background-color: #CCA43B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*  deals part */
+
+.deals {
+    padding: 15em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.deals-left {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    margin-right: 4em;
+}
+
+.deals-left h2 {
+    margin-bottom: 1em;
+    font-size: 34px;
+}
+
+.deals-left h4 {
+    color: #CCA43B;
+    margin-bottom: 2em;
+}
+
+.deals-left p {
+    margin-bottom: 1.5em;
+}
+
+.deals-left button {
+    padding: 0.5em 4em 0.5em 4em;
+    background-color: #CCA43B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 1em;
+}
+
+.deals-right {
+    margin-left: 4em;
+}
