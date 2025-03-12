@@ -6,7 +6,7 @@ use App\Models\Product;
 
 
 Route::get('/', function(){
-    return view ('landing');
+    return view('landing');
 });
 
 // vajag route, kas ies uz produktiem visiem, tad uz single. 

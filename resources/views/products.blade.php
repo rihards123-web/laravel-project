@@ -1,3 +1,5 @@
+@include('partials.navbar')
+
 @foreach ($products as $product)
 
     <h1><a href="/products/{{$product->id}}">{{$product->title}}</a></h1>
@@ -8,3 +10,5 @@
 
     <hr>
 @endforeach
+
+@include('partials.footer')
