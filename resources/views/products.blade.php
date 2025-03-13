@@ -2,23 +2,25 @@
 
 <link rel="stylesheet" href="{{asset('css/all-products.css')}}">
 
-<section class="products-container">
+ <div class="container-heading">
+    <h2>Products</h2>
+     <p>Order it for you or for your beloved ones</p>
+ </div>
 
-    <div class="container-heading">
-        <h2>Products</h2>
-        <p>Order it for you or for your beloved ones</p>
+<div class="container-products">
+        @foreach ($products as $product)
+
+        <a href="/products/{{$product->id}}">
+
+    <div class="product-card">
+        
+        <img src="{{asset('images/' . $product->image)}}" alt="">
+    
+        <h2>{{$product->title}}</h2>
+    
+        <p>{{$product->price}} €</p>
     </div>
-
-    @foreach ($products as $product)
-
-    <img src="{{ asset('images/' . $product->image) }}" alt="">
-
-    <h1><a href="/products/{{$product->id}}">{{$product->title}}</a></h1>
-
-    <h2>{{$product->price}}</h2>
-
-    <hr>
-@endforeach
-</section>
-
+</a>
+        @endforeach
+</div>
 @include('partials.footer')
