@@ -13,8 +13,12 @@
 .container-products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);   /* 4 kollonas ar 1fr */
-    gap: 2.5em;
+    gap: 4em;
     padding: 3em;
+    align-items: center;
+    justify-items: center;
+  
+
 }
 
 .container-products a {
