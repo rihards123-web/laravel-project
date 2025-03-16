@@ -12,7 +12,7 @@
             <ul>
                 <li><a href="/">Sākums</a></li>
                 <li><a href="/products">Produkti</a></li>
-                <li>Par mums</li>
+                <li><a href="#">Par mums</a></li>
             </ul>  
         <div class="nav-icons">
             <div class="dropdown">

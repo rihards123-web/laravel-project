@@ -29,6 +29,10 @@ html, body {
     text-align: center;
 }
 
+.container-left p {
+    margin-bottom: 1em;
+}
+
 .product-image {
     padding-bottom: 2em;
 }
@@ -53,7 +57,9 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    color: #CCA43B;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .product-description {
@@ -78,42 +84,34 @@ html, body {
 
 
 
-/*  */
+/* quantity toggler */
 
-.price-container {
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-.quantity-selector {
+.quantity-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    margin-top: 1em;
-}
-
-.quantity-selector button {
-    background-color: #CCA43B;
-    color: white;
-    border: none;
+    border: 2px solid #CCA43B;  /* Gold border */
     padding: 0.5em 1em;
-    cursor: pointer;
-    font-size: 1.2em;
-    border-radius: 5px;
+    width: fit-content;
 }
 
-.quantity-selector input {
-    width: 3em;
-    text-align: center;
+.quantity-btn {
+    background: none;
+    border: none;
     font-size: 1.2em;
-    border: 1px solid #ddd;
-    padding: 0.3em;
-    border-radius: 5px;
-}
-
-.total-price {
-    font-size: 1.5em;
     font-weight: bold;
-    margin-top: 1em;
+    cursor: pointer;
+    color: #CCA43B; /* Gold color */
+    padding: 0 0.5em;
+}
+
+.quantity-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0 0.5em;
+}
+
+/* Make the decrement button gray when at 1 */
+.quantity-btn.decrement:disabled {
+    color: gray;
+    cursor: not-allowed;
 }

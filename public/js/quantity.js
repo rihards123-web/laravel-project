@@ -1,28 +1,28 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     const decrementBtn = document.querySelector(".decrement");
     const incrementBtn = document.querySelector(".increment");
-    const quantityInput = document.getElementById("quantity");
-    const basePrice = parseFloat(document.querySelector(".basePrice").innerText); // FIXED
-    const totalPrice = document.getElementById("totalPrice");
+    const quantityValue = document.querySelector(".quantity-value");
 
-    function updateTotal() {
-        let quantity = parseInt(quantityInput.value);
-        totalPrice.innerText = (basePrice * quantity).toFixed(2);
+    function updateQuantity(change) {
+        let quantity = parseInt(quantityValue.textContent);
+        quantity += change;
+
+        if (quantity < 1) {
+            quantity = 1;
+        }
+
+        quantityValue.textContent = quantity;
+        decrementBtn.disabled = quantity === 1;
     }
 
-    // Decrease Quantity
     decrementBtn.addEventListener("click", function () {
-        let currentValue = parseInt(quantityInput.value);
-        if (currentValue > 1) {
-            quantityInput.value = currentValue - 1;
-            updateTotal();
-        }
+        updateQuantity(-1);
     });
 
-    // Increase Quantity
     incrementBtn.addEventListener("click", function () {
-        let currentValue = parseInt(quantityInput.value);
-        quantityInput.value = currentValue + 1;
-        updateTotal();
+        updateQuantity(1);
     });
-};
+
+    // Disable the decrement button at the start
+    decrementBtn.disabled = true;
+});
