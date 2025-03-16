@@ -23,4 +23,5 @@
 </a>
         @endforeach
 </div>
+
 @include('partials.footer')

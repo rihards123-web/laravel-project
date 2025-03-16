@@ -19,10 +19,31 @@
             <button>Discover our collection</button>
         </div>
     </section>
-<!-- 
-    <section class="products">
-        te vajadzēs izvilkt kaut kādus produktus no db, lai uztaisītu ķkipa showcase ar dažiem no tiem
-    </section> -->
+
+    <section class="product-display">
+
+        <div class="container-heading">
+            <h2>Products</h2>
+             <h3>Order it for you or for your beloved ones</h3>
+         </div>
+
+        <div class="container-products">
+            @foreach ($products->take(8) as $product)
+    
+            <a href="/products/{{$product->id}}">
+    
+        <div class="product-card">
+            
+            <img src="{{asset('images/' . $product->image)}}" alt="">
+        
+            <h2>{{$product->title}}</h2>
+        
+            <p>{{$product->price}} €</p>
+        </div>
+    </a>
+            @endforeach
+    </div>
+    </section>
     
     <section class="deals">
         <div class="deals-left">
