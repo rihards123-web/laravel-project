@@ -20,15 +20,23 @@
                     
             
                     <div class="price-cart">
-                        <p class="product-price">$ {{ number_format($product->price, 2) }}</p>
+                        <p class="product-price">$ <span class="basePrice">{{ number_format($product->price, 2) }}</span></p>
+
+                        <div class="quantity-selector">
+                            <button class="decrement">-</button>
+                            <input type="number" id="quantity" value="1" min="1" readonly>
+                            <button class="increment">+</button>
+                        </div>
+
+                        <p class="total-price">Total: $ <span id="totalPrice">{{ number_format($product->price, 2) }}</span></p>
+
                         <button class="add-to-cart">
                             🛒 + Add to cart
                         </button>
                     </div>
                   
+                    <script src="{{asset('js/quantity.js')}}"> </script>
                     
-            
-                    <!-- Product Description -->
                     <div class="product-description">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
                             Tempore deleniti quo numquam aliquid eius eveniet, at aspernatur. <br>
@@ -43,6 +51,5 @@
     </body>   
     
 </html>
-
 
 
