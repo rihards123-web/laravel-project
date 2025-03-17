@@ -17,7 +17,6 @@
                     <p class="free-shipping">🚚 <strong>FREE SHIPPING</strong></p>
                 </div>
                 
-                <!-- Right Section: Product Info & Purchase Options -->
                 <div class="container-right">
                     <h1 class="product-title">{{ $product->title }}<sup>®</sup></h1>
                     
