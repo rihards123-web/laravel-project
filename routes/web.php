@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\CartController;
 
 // landing page
 Route::get('/', function(){
@@ -17,3 +20,8 @@ Route::get('/products', [ProductsController::class, 'index'] ); // visi produkti
 
 Route::get('/products/{product}', [ProductsController::class, 'show'] ); // viens produkts
 
+// cart sekcija 
+
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');

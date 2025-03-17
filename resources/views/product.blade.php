@@ -1,6 +1,9 @@
 @include('partials.navbar')
 <link rel="stylesheet" href="{{asset('css/single-product.css')}}">
-
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="cart-add-url" content="{{ route('cart.add') }}">
+</head>
 <html>
     <body>
         <div class="wrapper">
@@ -27,14 +30,15 @@
                             <span class="quantity-value">1</span>
                             <button class="quantity-btn increment">+</button>
                         </div>
-                        
+                        <script src="{{asset('js/quantity.js')}}"> </script>
                       
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" data-product-id="{{$product->id}}">
                             🛒 + Add to cart
                         </button>
                     </div>
-                  
-                    <script src="{{asset('js/quantity.js')}}"> </script>
+                    
+                    <p id="cart-message"></p>
+                    
                     
                     <div class="product-description">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
@@ -46,6 +50,7 @@
             </div>
             @include('partials.footer')
             </div>
+            <script src="{{asset('js/add-to-cart.js')}}"></script>
     </body>   
 </html>
 

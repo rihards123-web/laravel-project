@@ -16,7 +16,7 @@
         <div class="center-container">
             <h2>All your shopping needs satisfied</h2>
             <h4>Take time to browse our select in-store goods. Enjoy your shopping <br> experience with Storefront!</h4>
-            <button>Discover our collection</button>
+            <button><a href="/products">Discover our collection</a></button>
         </div>
     </section>
 

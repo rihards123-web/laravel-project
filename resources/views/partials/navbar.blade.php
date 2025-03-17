@@ -23,7 +23,9 @@
                     </div>
                 </div>
             </div>
-            <div class="cart-icon"><img src="{{asset('images/Cart.png')}}" alt=""></div>
+            <div class="cart-icon">
+                <a href="/cart"><img src="{{asset('images/Cart.png')}}" alt=""></a>
+            </div>
         </div>
     </section>
 </body>
