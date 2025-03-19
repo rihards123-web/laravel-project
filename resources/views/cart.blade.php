@@ -13,6 +13,9 @@
             @if (empty(session('cart')) || count(session('cart')) === 0)
             <h2>You don’t have any items in cart</h2>
         @else 
+        
+            <h2>Your cart items</h2>
+            <a href="/products">Back to shopping</a>
 
         <div class="cart-container">
             <div class="cart-head">
@@ -22,29 +25,35 @@
                 <p>Total</p>
             </div>
 
+            <hr>
+
             @foreach (session('cart') as $id => $item)
                 <div class="cart-item">
+
                     <div class="product">
-                        <img src="{{ asset('images/' . $item['image']) }}" width="50"> 
-                        {{ $item['title'] }} 
-                        <button class="remove-from-cart" data-product-id="{{ $id }}">Remove</button>
+                        {{-- product collumn --}}
+                        <img src="{{ asset('images/' . $item['image']) }}"> 
+                        <div class="product-info">
+                            <p>{{ $item['title'] }}</p>
+                            <button class="remove-from-cart" data-product-id="{{ $id }}">Remove</button>
+                        </div>
                     </div>
 
                     <div class="price">
-                        {{ number_format($item['price'], 2) }}  
+                        <p>$ {{ number_format($item['price'], 2) }}</p>  
                     </div>
                     
                     <div class="quantity">
-                        {{ $item['quantity'] }} 
+                        <p>{{ $item['quantity'] }}</p> 
                     </div>
 
                     <div class="total">
-                    {{ number_format($item['price'] * $item['quantity'], 2) }}
+                    <p>$ {{ number_format($item['price'] * $item['quantity'], 2) }}</p>
                     </div>
-                
                 </div>
-            </div>
+                <hr>
             @endforeach
+            </div>
         @endif
         <script src="{{ asset('js/remove-from-cart.js') }}"></script>
         </div>
