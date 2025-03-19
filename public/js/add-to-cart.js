@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             console.log("✅ Added to cart:", data);
-            document.getElementById("cart-message").innerText = "✅ Product added to cart!";
+          //  document.getElementById("cart-message").innerText = "✅ Product added to cart!";
+            alert('Product added to cart')
         })
         .catch(error => console.error("❌ Error:", error));
     });
