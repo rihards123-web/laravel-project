@@ -49,7 +49,7 @@ hr {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 4em;
+    margin: 4em 4em 0 4em;
 }
 
 .wrapper h2 {
@@ -63,14 +63,15 @@ hr {
 
 .cart-container {
     display: grid;
-    margin: auto;
+    margin: 4em;
 }
 
 .cart-head {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr; /* Product | Price | Quantity | Total */
+    grid-template-columns: 3fr 1fr 1fr 1fr; 
     text-align: center;
     margin-bottom: 1em;
+    font-weight: bold;
 }
 
 .cart-head p:first-child{
@@ -106,4 +107,38 @@ hr {
     display: flex;
     justify-content: right;
     align-items: center;
+}
+
+.total-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10em;
+}
+
+.cart-total {
+    display: flex;
+    gap: 1em;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cart-total-btn{
+    display: flex;
+    margin-left: 4em;
+
+}
+
+.cart-total-btn button {
+    background-color: #CCA43B;
+    border: none;
+    border-radius: 5px;
+    padding: 1em 3.5em 1em 3.5em;
+}
+
+.cart-total-btn a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
 }

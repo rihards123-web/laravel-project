@@ -11,11 +11,15 @@
     <body>
         <div class="wrapper">
             @if (empty(session('cart')) || count(session('cart')) === 0)
-            <h2>You don’t have any items in cart</h2>
-        @else 
-        
-            <h2>Your cart items</h2>
-            <a href="/products">Back to shopping</a>
+                <h2>You don’t have any items in cart</h2>
+            @else 
+
+            @php
+                $grandTotal = 0;
+            @endphp
+
+                <h2>Your cart items</h2>
+                <a href="/products">Back to shopping</a>
 
         <div class="cart-container">
             <div class="cart-head">
@@ -24,10 +28,15 @@
                 <p>Quantity</p>
                 <p>Total</p>
             </div>
-
             <hr>
-
+            
             @foreach (session('cart') as $id => $item)
+
+            @php
+                $itemTotal = $item['price'] * $item['quantity'];
+                $grandTotal = $grandTotal + $itemTotal;
+            @endphp
+
                 <div class="cart-item">
 
                     <div class="product">
@@ -54,6 +63,19 @@
                 <hr>
             @endforeach
             </div>
+
+            
+        <div class="total-container">
+            <div class="cart-total"> 
+                <p>Sub-total</p>
+                <p>$ {{number_format($grandTotal, 2)}}</p>
+            </div>
+            
+            <div class="cart-total-btn">
+                <button><a href="#">Check-out</a></button>
+            </div>
+        </div>
+
         @endif
         <script src="{{ asset('js/remove-from-cart.js') }}"></script>
         </div>
