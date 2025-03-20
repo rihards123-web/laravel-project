@@ -72,7 +72,7 @@
             </div>
             
             <div class="cart-total-btn">
-                <button><a href="#">Check-out</a></button>
+                <button><a href="/cart/check-out">Check-out</a></button>
             </div>
         </div>
 

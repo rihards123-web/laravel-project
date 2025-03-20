@@ -25,3 +25,8 @@ Route::get('/products/{product}', [ProductsController::class, 'show'] ); // vien
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
+
+
+Route::get('cart/check-out', function(){
+    return view('check-out');
+});

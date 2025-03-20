@@ -142,3 +142,11 @@ hr {
     font-weight: bold;
     font-size: 16px;
 }
+
+.cart-total-btn button:hover {
+    background-color: #ca9b25;
+}
+
+.cart-total-btn button:active {
+    background-color: #b18821;
+}

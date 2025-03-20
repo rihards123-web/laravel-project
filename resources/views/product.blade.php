@@ -14,7 +14,7 @@
                         <img src="{{asset('images/' . $product->image) }}" alt="{{ $product->title }}">
                     </div>
                     <p class="product-subtext">Selected with care for best customer experience</p>
-                    <p class="free-shipping">🚚 <strong>FREE SHIPPING</strong></p>
+                    <p class="free-shipping">🚚 FREE SHIPPING</p>
                 </div>
                 
                 <div class="container-right">
