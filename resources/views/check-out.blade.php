@@ -51,7 +51,7 @@
 
                 <div class="buttons">
                     <button class="back-to-cart"><a href="/cart">Back to cart</a></button>
-                    <button class="go-to-shopping"><a href="#">Go to shipping</a></button>
+                    <button class="go-to-shopping"><a href="/cart/check-out/payment">Go to shipping</a></button>
                 </div>
 
             </div>

@@ -1,0 +1,47 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 12em;
+}
+
+.payment-container {
+    border: #E5E5E5 1.5px solid;
+    padding: 0em 4em;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.payment-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    background-color: #cca33b69;
+    border-radius: 5px;
+   
+    border: #E5E5E5 1.5px solid;
+    
+}
+
+.payment-head h3 {
+    color: #CCA43B;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.expiry {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}

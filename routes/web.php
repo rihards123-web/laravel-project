@@ -30,3 +30,7 @@ Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('ca
 Route::get('cart/check-out', function(){
     return view('check-out');
 });
+
+Route::get('cart/check-out/payment', function(){
+    return view('payment');
+});
