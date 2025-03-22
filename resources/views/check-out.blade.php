@@ -1,4 +1,4 @@
-@include('partials.navbar')
+@include('profile.partials.navbar')
 
 <head>
     <link rel="stylesheet" href="{{asset('css/check-out.css')}}">

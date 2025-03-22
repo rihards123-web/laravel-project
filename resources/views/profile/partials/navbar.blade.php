@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +19,17 @@
             <div class="dropdown">
                 <div class="profile-icon"> <img src="{{asset('images/Profile.png')}}" alt="" class="dropimg">
                     <div class="dropdown-content">
-                        <a href="sign-up.php">Reģistrēties</a>
-                        <a href="log-in.php">Logoties</a>
+                        @auth 
+                            <p>Welcome, {{auth::user()->first_name}}</p>
+                            <a href="/profile">Profils</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="logout-button">Izrakstīties</button>
+                            </form>
+                        @else
+                            <a href="/register">Reģistrēties</a>
+                            <a href="/login">Logoties</a>
+                        @endauth
                     </div>
                 </div>
             </div>

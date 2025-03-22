@@ -2,11 +2,12 @@
     <link rel="stylesheet" href="{{asset('css/payment.css')}}">
 </head>
 
-@include('partials.navbar');
+@include('profile.partials.navbar');
 
 <html>
     <body>
         <div class="wrapper">
+            <div class="container">
 
             <div class="payment-container">   
                 
@@ -17,24 +18,25 @@
                     </div>
                 </div>
                 
-                <div class="payment-card">
-                    <div class="card">
-                        <input type="text" name="" id="card-number" maxlength="19" placeholder="Card Number" required>
-                        <input type="text" name="" id="holder-name" placeholder="Holder Name" required>
-                    </div>
-                
-                    <div class="expiry">
-                        <input type="text" name="" id="expiry" placeholder="Experation MM/YY" maxlength="5" required>
-                        <input type="text" name="" id="cvv"  placeholder="CVV" required>
+                <div class="card-container">
+                    <div class="payment-card">
+                        <div class="card">
+                            <input type="text" name="" id="card-number" maxlength="19" placeholder="Card Number" required>
+                            <input type="text" name="" id="holder-name" placeholder="Holder Name" required>
+                        </div>
+                    
+                        <div class="expiry">
+                            <input type="text" name="" id="expiry" placeholder="Experation MM/YY" maxlength="5" required>
+                            <input type="text" name="" id="cvv"  placeholder="CVV" required>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="buttons">
-                    <button class="back-to-checkout"><a href="/cart/check-out">Back to details</a></button>
-                    <button class="go-to-payment"><a href="#">Go to payment</a></button>
-                </div>
-
             </div>
+            <div class="buttons">
+                <button class="back-to-checkout"><a href="/cart/check-out">Back to details</a></button>
+                <button class="go-to-payment"><a href="#">Go to payment</a></button>
+            </div>
+        </div>
         </div>
     </body>
 </html>

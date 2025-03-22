@@ -1,4 +1,4 @@
-@include('partials.navbar')
+@include('profile.partials.navbar')
 <link rel="stylesheet" href="{{asset('css/single-product.css')}}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            @include('partials.footer')
+            @include('profile.partials.footer')
             </div>
             <script src="{{asset('js/add-to-cart.js')}}"></script>
     </body>   

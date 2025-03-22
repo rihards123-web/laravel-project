@@ -1,4 +1,4 @@
-@include('partials.navbar')
+@include('profile.partials.navbar')
 
 <link rel="stylesheet" href="{{asset('css/all-products.css')}}">
 
@@ -24,4 +24,4 @@
         @endforeach
 </div>
 
-@include('partials.footer')
+@include('profile.partials.footer')

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    @include('partials.navbar')
+    @include('profile.partials.navbar')
 
     <section class="landing">
         <div class="center-container">
@@ -59,7 +59,7 @@
         </div>
     </section>
 
-    @include('partials.footer')
+    @include('profile.partials.footer')
 
 </body>
 </html>
