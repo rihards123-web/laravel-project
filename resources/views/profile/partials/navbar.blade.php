@@ -21,6 +21,7 @@
                     <div class="dropdown-content">
                         @auth 
                             <p>Welcome, {{auth::user()->first_name}}</p>
+                            <hr>
                             <a href="/profile">Profils</a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

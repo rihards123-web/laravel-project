@@ -37,6 +37,10 @@ Route::get('cart/check-out/payment', function(){
     return view('payment');
 });
 
+Route::get('cart/check-out/payment/payment-confirmed', function(){
+    return view('payment-confirmed');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

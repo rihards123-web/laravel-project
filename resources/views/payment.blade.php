@@ -34,7 +34,7 @@
             </div>
             <div class="buttons">
                 <button class="back-to-checkout"><a href="/cart/check-out">Back to details</a></button>
-                <button class="go-to-payment"><a href="#">Go to payment</a></button>
+                <button class="go-to-payment"><a href="/cart/check-out/payment/payment-confirmed">Go to payment</a></button>
             </div>
         </div>
         </div>
