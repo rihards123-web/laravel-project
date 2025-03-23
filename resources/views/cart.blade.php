@@ -10,9 +10,10 @@
 <html>
     <body>
         <div class="wrapper">
-            @if (empty(session('cart')) || count(session('cart')) === 0)
+            @if ((auth()->check() && count($cartItems) === 0) || 
+            (!auth()->check() && (empty(session('cart')) || count(session('cart')) === 0)))
                 <h2>You don’t have any items in cart</h2>
-            @else 
+            @else
 
             @php
                 $grandTotal = 0;
@@ -29,6 +30,44 @@
                 <p>Total</p>
             </div>
             <hr>
+
+            @if (auth()->check())
+                @foreach ($cartItems as $item)
+                @php
+                $itemTotal = $item['price'] * $item['quantity'];
+                $grandTotal = $grandTotal + $itemTotal;
+            @endphp
+
+                <div class="cart-item">
+
+                    <div class="product">
+                        {{-- product collumn --}}
+                        <img src="{{ asset('images/' . $item['image']) }}"> 
+                        <div class="product-info">
+                            <p>{{ $item['title'] }}</p>
+                            <button class="remove-from-cart" data-product-id="{{ $item['id'] }}">Remove</button>
+                        </div>
+                    </div>
+
+                    <div class="price">
+                        <p>$ {{ number_format($item['price'], 2) }}</p>  
+                    </div>
+                    
+                    <div class="quantity">
+                        <p>{{ $item['quantity'] }}</p> 
+                    </div>
+
+                    <div class="total">
+                    <p>$ {{ number_format($item['price'] * $item['quantity'], 2) }}</p>
+                    </div>
+                </div>
+                <hr>
+            @endforeach
+            </div>
+        
+            
+
+            @else
             
             @foreach (session('cart') as $id => $item)
 
@@ -63,8 +102,7 @@
                 <hr>
             @endforeach
             </div>
-
-            
+            @endif
         <div class="total-container">
             <div class="cart-total"> 
                 <p>Sub-total</p>
