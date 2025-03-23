@@ -9,23 +9,26 @@ class CartController extends Controller
 {
     public function addToCart(Request $request)
     {
+        // finds product by id
         $product = Product::find($request->product_id);
-        $quantity = $request->quantity ?? 1;
+        $quantity = $request->quantity ?? 1; 
 
         if (!$product) {
-            return response()->json(['error' => 'Product not found'], 404);
+            return response()->json(['error' => 'Product not found'], 404); // if not found gives a 404
         }
 
-        if(auth()->check()){
-            // Find existing cart item
+        // for registerd users 
+        if(auth()->check()){ 
+            //  check if user already has product in cart
             $existingCartItem = auth()->user()->cartItems()->where('product_id', $product->id)->first();
-            
+            // if exists then increments quantity
             if($existingCartItem) {
-                // Update existing item
+                // updating an existing cart item
                 $existingCartItem->quantity += $quantity;
                 $existingCartItem->save();
+                // if product doesnt exist create one in the DB
             } else {
-                // Create new cart item with all needed product details
+                // creating new cart item
                 auth()->user()->cartItems()->create([
                     'product_id' => $product->id,
                     'quantity' => $quantity
@@ -36,7 +39,7 @@ class CartController extends Controller
         }
 
         else{
-            // guest using session for storing cart
+            // guest using sessions as an array for storing cart items
              
         $cart = session()->get('cart', []); // storing data in session
     
@@ -51,13 +54,15 @@ class CartController extends Controller
                 "image" => $product->image
             ];
         }
-    
+        // puts item in session
         session()->put('cart', $cart);
     
         return response()->json(['message' => 'Product added to cart!', 'cart' => $cart]);
         }
     }
 
+    // returns cart depending on user. Logged in -> DB , guest -> session
+    // cart items get mapped which returns an associative array 
     public function viewCart()
     {
         if (auth()->check()) {
@@ -82,11 +87,12 @@ class CartController extends Controller
     public function removeFromCart(Request $request)
     {
         $productId = $request->input('product_id'); // Get product ID from JSON body
-
+        // for users delets a row from DB
         if (auth()->check()) {
             auth()->user()->cartItems()->where('product_id', $productId)->delete();
             return response()->json(['success' => true]);
         } else {
+            // for guests removes item from sessions cart
             $cart = session()->get('cart', []);
             unset($cart[$productId]);
             session()->put('cart', $cart);
